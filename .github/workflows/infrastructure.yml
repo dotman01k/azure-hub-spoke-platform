@@ -34,7 +34,7 @@ jobs:
       STATE_RG: ${{ vars.STATE_RESOURCE_GROUP }}
       DEPLOY_ENV: ${{ inputs.environment }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Validate topology before Azure authentication
         run: python -m unittest discover -s tests -v
       - uses: azure/login@v2
@@ -75,7 +75,7 @@ jobs:
       STATE_RG: ${{ vars.STATE_RESOURCE_GROUP }}
       DEPLOY_ENV: ${{ inputs.environment }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: azure/login@v2
         with:
           client-id: ${{ vars.INFRA_CLIENT_ID }}
