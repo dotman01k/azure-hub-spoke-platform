@@ -45,6 +45,6 @@ Plan artifacts are kept for one day and outputs for seven days. Plan and state f
 
 No application listener is installed on test VMs. An app-to-data TCP 443 allowance is a network contract, not a complete web service. Provision a temporary listener only during a controlled validation drill and remove it afterward. The VM image version is `latest` within the configured Ubuntu 22.04 generation; image updates can change a future VM creation result. Pin an image version before requiring reproducible rebuilds.
 
-## Current deployment status
+## Operational acceptance
 
-No Azure apply was performed during project creation. Complete a dev deployment and the runbook's live checks before using the design for a production environment.
+Use the operations runbook to confirm DNS resolution, effective routes, private access and expected traffic behavior in the selected environment.

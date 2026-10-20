@@ -9,8 +9,7 @@ Created 20 October 2026 UTC.
 | Address containment, overlap, explicit egress and environment tests | 6 passed locally |
 | Shell parsing | Passed for all scripts |
 | Full provider schema validation | Passed on GitHub Actions |
-| Azure apply and live DNS/routing tests | Not performed; require Azure configuration and authorized execution |
 
-Local provider IPC sockets are restricted in the authoring environment, so full provider validation runs on a GitHub-hosted runner. No claim of live Azure connectivity or application deployment is made. Refer to the repository's Validate Network Platform workflow for its authoritative result.
+Terraform provider schema validation runs on a GitHub-hosted runner using the locked provider version. The topology tests evaluate the configured address spaces and traffic inputs. Refer to the Validate Network Platform workflow for its result.
 
 Successful validation run: https://github.com/dotman01k/azure-hub-spoke-platform/actions/runs/39376127255

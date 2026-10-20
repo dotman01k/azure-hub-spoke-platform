@@ -1,5 +1,15 @@
 # Architecture decisions
 
+![Architecture diagram](architecture.svg)
+
+## Read the diagram
+
+1. **Delivery:** GitHub Actions exchanges its OIDC identity for Azure access, and Terraform configures the network through the management API.
+2. **Routing:** Application and data workload subnets send default and remote spoke traffic to the Firewall private IP, with return routes in the opposite spoke.
+3. **Filtering:** Firewall allows application-to-data TCP 443 and named package domains on HTTP/HTTPS. NSGs add workload subnet boundaries.
+4. **DNS:** Spoke clients use the Firewall DNS proxy. The upstream resolver can resolve private service records through the hub's linked private DNS zones.
+5. **Private access:** Key Vault has a private endpoint in the hub, and Blob storage has one in the data spoke. Effective routes and data RBAC determine usable service access; the diagram does not imply every private endpoint packet traverses Firewall.
+
 ## Hub and spoke transit
 
 Each spoke has bidirectional peering with the hub and forwarded traffic enabled. There is no direct spoke-to-spoke peering. Workload routes send internet and the remote spoke address prefix to the Firewall private IP, giving a symmetric interspoke route configuration. The Firewall permits only the app workload subnet to initiate TCP 443 to the data workload subnet, with an additional matching destination NSG rule. Return packets for an established connection are statefully permitted.

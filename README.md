@@ -6,8 +6,6 @@ A Terraform implementation of centralized Azure network security, private servic
 
 **Validation:** Terraform provider schema validation, topology tests and shell checks passed in [GitHub Actions](https://github.com/dotman01k/azure-hub-spoke-platform/actions/runs/39376127255).
 
-**Deployment status:** Source implementation. No Azure resources have been provisioned by publishing this repository. Review [validation evidence](docs/validation.md) for checks actually completed.
-
 **Cost:** Azure Firewall Standard is always provisioned when you apply this project, including dev. It incurs ongoing charges even without application traffic. Bastion and test VMs add charges when enabled. Review Azure Pricing Calculator before any apply.
 
 ## Contents
@@ -39,6 +37,16 @@ A Terraform implementation of centralized Azure network security, private servic
 | Validation | Terraform schema checks, address topology tests, example configuration checks and shell syntax |
 
 ## Architecture and traffic paths
+
+![Architecture diagram](docs/architecture.svg)
+
+1. **Delivery:** GitHub Actions exchanges its OIDC identity for Azure access, and Terraform configures the network through the management API.
+2. **Routing:** Application and data workload subnets send default and remote spoke traffic to the Firewall private IP, with return routes in the opposite spoke.
+3. **Filtering:** Firewall allows application-to-data TCP 443 and named package domains on HTTP/HTTPS. NSGs add workload subnet boundaries.
+4. **DNS:** Spoke clients use the Firewall DNS proxy. The upstream resolver can resolve private service records through the hub's linked private DNS zones.
+5. **Private access:** Key Vault has a private endpoint in the hub, and Blob storage has one in the data spoke. Effective routes and data RBAC determine usable service access; the diagram does not imply every private endpoint packet traverses Firewall.
+
+[Open the full diagram](docs/architecture.svg) · [Design explanation](docs/architecture.md)
 
 ```mermaid
 flowchart TD

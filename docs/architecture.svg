@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1130" viewBox="0 0 1600 1130" role="img" aria-labelledby="title desc"><title id="title">Azure hub and spoke network</title><desc id="desc">Centralized Firewall routing, private service access and DNS resolution</desc><defs>
+<marker id="blue" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#0078d4"/></marker>
+<marker id="purple" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#7155c7"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#16836b"/></marker>
+<marker id="gray" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#52677d"/></marker>
+</defs>
+<rect width="1600" height="1130" fill="#f4f8fc"/>
+<rect x="0" y="0" width="1600" height="10" fill="#0078d4"/>
+<text x="60" y="65" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#18334d">Azure hub and spoke network</text>
+<text x="60" y="104" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#52677d">Centralized Firewall routing, private service access and DNS resolution</text>
+<rect x="60" y="140" width="1480" height="140" rx="16" fill="#e8f2fc" stroke="#d7e3ee" stroke-width="2"/>
+<text x="84" y="176" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">DELIVERY</text>
+<rect x="85" y="188" width="330" height="70" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<circle cx="115" cy="218" r="16" fill="#0078d4"/>
+<text x="110" y="224" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="white">1</text>
+<text x="143" y="224" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">GitHub Actions</text>
+<rect x="500" y="188" width="420" height="70" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<circle cx="530" cy="218" r="16" fill="#0078d4"/>
+<text x="525" y="224" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="white">2</text>
+<text x="558" y="224" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Azure OIDC identity</text>
+<rect x="1000" y="188" width="515" height="70" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<circle cx="1030" cy="218" r="16" fill="#0078d4"/>
+<text x="1025" y="224" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="white">3</text>
+<text x="1058" y="224" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Terraform via Azure management API</text>
+<path d="M415 224 H500" fill="none" stroke="#0078d4" stroke-width="3" stroke-linejoin="round" marker-end="url(#blue)"/>
+<path d="M920 224 H1000" fill="none" stroke="#0078d4" stroke-width="3" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="60" y="320" width="1480" height="295" rx="16" fill="#eef5fc" stroke="#d7e3ee" stroke-width="2"/>
+<text x="84" y="356" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">HUB VNET  10.10.0.0/16</text>
+<text x="84" y="382" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52677d">Shared security, name resolution and administration</text>
+<rect x="90" y="420" width="370" height="150" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="114" y="456" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Private DNS and Key Vault</text>
+<text x="114" y="487" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Vault and Blob private DNS zones</text>
+<text x="114" y="513" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Zone links: hub + both spokes</text>
+<text x="114" y="539" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Key Vault private endpoint</text>
+<rect x="560" y="410" width="480" height="170" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<circle cx="590" cy="440" r="16" fill="#0078d4"/>
+<text x="585" y="446" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="white">4</text>
+<text x="618" y="446" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Azure Firewall Standard</text>
+<text x="584" y="477" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">DNS proxy → Azure DNS upstream</text>
+<text x="584" y="503" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Default and peer routes use this IP</text>
+<text x="584" y="529" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Explicit network + FQDN allow rules</text>
+<rect x="1140" y="420" width="370" height="150" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1164" y="456" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Bastion (optional)</text>
+<text x="1164" y="487" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Private SSH to workload VMs</text>
+<text x="1164" y="513" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Dedicated Bastion subnet</text>
+<text x="1164" y="539" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">VM NICs have no public IP</text>
+<path d="M560 470 H460" fill="none" stroke="#7155c7" stroke-width="3" stroke-linejoin="round" marker-end="url(#purple)" stroke-dasharray="7 5"/>
+<rect x="474" y="430" width="53.2" height="29" rx="7" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="486" y="450" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#7155c7">DNS</text>
+<rect x="60" y="675" width="530" height="290" rx="16" fill="#eef5fc" stroke="#d7e3ee" stroke-width="2"/>
+<text x="84" y="711" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">APPLICATION SPOKE  10.20.0.0/16</text>
+<text x="84" y="737" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52677d">Workloads: 10.20.1.0/24 | private endpoints: 10.20.2.0/24</text>
+<rect x="85" y="765" width="480" height="150" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="109" y="801" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Private workload subnet</text>
+<text x="109" y="832" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Optional Linux test VM</text>
+<text x="109" y="858" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Default + data-spoke route → Firewall</text>
+<text x="109" y="884" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">DNS server = Firewall private IP</text>
+<text x="109" y="910" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">NSG: Bastion SSH; deny other inbound</text>
+<rect x="1010" y="675" width="530" height="290" rx="16" fill="#eef5fc" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1034" y="711" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">DATA SPOKE  10.30.0.0/16</text>
+<text x="1034" y="737" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52677d">Workloads: 10.30.1.0/24 | private endpoints: 10.30.2.0/24</text>
+<rect x="1035" y="765" width="480" height="150" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1059" y="801" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Private workload + Blob endpoint</text>
+<text x="1059" y="832" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Optional Linux test VM</text>
+<text x="1059" y="858" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Return route to app → Firewall</text>
+<text x="1059" y="884" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">App TCP 443 + Bastion SSH allowed</text>
+<text x="1059" y="910" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Blob endpoint uses private DNS</text>
+<path d="M325 675 V645 H675 V580" fill="none" stroke="#0078d4" stroke-width="3" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="340" y="619" width="212.8" height="29" rx="7" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="352" y="639" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0078d4">Default + peer traffic</text>
+<path d="M930 580 V645 H1275 V675" fill="none" stroke="#0078d4" stroke-width="3" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="1045" y="619" width="187.6" height="29" rx="7" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1057" y="639" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0078d4">App → data: TCP 443</text>
+<rect x="635" y="785" width="330" height="135" rx="16" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<circle cx="665" cy="815" r="16" fill="#0078d4"/>
+<text x="660" y="821" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="white">5</text>
+<text x="693" y="821" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#18334d">Approved internet access</text>
+<text x="659" y="852" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Named package repositories</text>
+<text x="659" y="878" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">HTTP 80 and HTTPS 443</text>
+<text x="659" y="904" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52677d">Other unmatched flows denied</text>
+<path d="M800 580 V785" fill="none" stroke="#0078d4" stroke-width="3" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="812" y="715" width="112.0" height="29" rx="7" fill="white" stroke="#d7e3ee" stroke-width="2"/>
+<text x="824" y="735" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0078d4">FQDN rules</text>
+<text x="70" y="1012" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#0078d4">HOW TO READ</text>
+<text x="70" y="1044" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#18334d">Blue: routed traffic and delivery. Purple: DNS proxy queries. Private DNS resolves the service endpoint names.</text>
+<text x="70" y="1076" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#52677d">Private endpoint packet paths depend on effective routes and policy. Azure data access still requires RBAC.</text>
+</svg>
