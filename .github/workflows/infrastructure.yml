@@ -52,7 +52,7 @@ jobs:
         run: |
           terraform plan -input=false -out=platform.tfplan
           terraform show -no-color platform.tfplan > plan.txt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: network-plan-${{ inputs.environment }}
           path: |
@@ -95,7 +95,7 @@ jobs:
         run: |
           terraform apply -input=false platform.tfplan
           terraform output -json > outputs.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: network-outputs-${{ inputs.environment }}
           path: infra/outputs.json
