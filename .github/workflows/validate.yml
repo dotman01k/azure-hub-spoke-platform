@@ -1,0 +1,29 @@
+name: Validate Network Platform
+on:
+  push:
+    paths: ["infra/**", "config/**", "scripts/**", "tests/**", ".github/**"]
+  pull_request:
+    paths: ["infra/**", "config/**", "scripts/**", "tests/**", ".github/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with: {terraform_version: 1.13.0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Terraform formatting and provider schema
+        working-directory: infra
+        run: |
+          terraform fmt -check -recursive
+          terraform init -backend=false -input=false -lockfile=readonly
+          terraform validate
+      - name: Address design and input validation
+        run: python -m unittest discover -s tests -v
+      - name: Shell syntax
+        run: |
+          for script in scripts/*.sh; do bash -n "$script"; done

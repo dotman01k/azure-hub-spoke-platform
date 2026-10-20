@@ -1,0 +1,16 @@
+{
+  "subscription_id": "REPLACE_SUBSCRIPTION_ID",
+  "resource_group_name": "rg-hubspoke-prod",
+  "name": "dotunnet",
+  "environment": "prod",
+  "location": "eastus",
+  "zones": [
+    "1",
+    "2",
+    "3"
+  ],
+  "bastion_enabled": true,
+  "test_vms_enabled": false,
+  "ssh_public_key": null,
+  "alert_email": "REPLACE_EMAIL"
+}

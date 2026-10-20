@@ -1,0 +1,6 @@
+resource_group_name = "rg-hubspoke-state"
+storage_account_name = "REPLACE_UNIQUE_STORAGE_ACCOUNT"
+container_name = "tfstate"
+key = "hubspoke-dev.tfstate"
+use_azuread_auth = true
+use_oidc = true

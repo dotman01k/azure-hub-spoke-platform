@@ -1,0 +1,30 @@
+{
+  "hub": {
+    "address_space": "10.10.0.0/16",
+    "firewall_subnet": "10.10.0.0/26",
+    "bastion_subnet": "10.10.1.0/26",
+    "private_subnet": "10.10.2.0/24"
+  },
+  "spokes": {
+    "app": {
+      "address_space": "10.20.0.0/16",
+      "workload_subnet": "10.20.1.0/24",
+      "private_subnet": "10.20.2.0/24"
+    },
+    "data": {
+      "address_space": "10.30.0.0/16",
+      "workload_subnet": "10.30.1.0/24",
+      "private_subnet": "10.30.2.0/24"
+    }
+  },
+  "allowed_egress_fqdns": [
+    "packages.microsoft.com",
+    "archive.ubuntu.com",
+    "security.ubuntu.com"
+  ],
+  "interspoke_rule": {
+    "source": "app",
+    "destination": "data",
+    "tcp_port": 443
+  }
+}
