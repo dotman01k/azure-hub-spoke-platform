@@ -4,6 +4,8 @@
 
 A Terraform implementation of centralized Azure network security, private service connectivity and controlled application-to-data traffic. The platform provisions a hub, two spokes, Azure Firewall Standard with DNS proxy, private endpoints, private DNS zones, route tables and workload NSGs. Optional Bastion and private test VMs support hands on network validation.
 
+**Validation:** Terraform provider schema validation, topology tests and shell checks passed in [GitHub Actions](https://github.com/dotman01k/azure-hub-spoke-platform/actions/runs/39376127255).
+
 **Deployment status:** Source implementation. No Azure resources have been provisioned by publishing this repository. Review [validation evidence](docs/validation.md) for checks actually completed.
 
 **Cost:** Azure Firewall Standard is always provisioned when you apply this project, including dev. It incurs ongoing charges even without application traffic. Bastion and test VMs add charges when enabled. Review Azure Pricing Calculator before any apply.
